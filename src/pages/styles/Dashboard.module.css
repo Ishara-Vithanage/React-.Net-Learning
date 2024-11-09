@@ -51,6 +51,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     cursor: pointer;
+    overflow: hidden; /* Ensures image stays within the button */
     transition: transform 0.3s ease;
 }
 
@@ -59,8 +60,10 @@
 }
 
 .button img {
-    width: 120px;
+    width: 270px;
     height: auto;
+    object-fit: contain; /* Ensures image stays within boundaries */
+
 }
 
 .button p {

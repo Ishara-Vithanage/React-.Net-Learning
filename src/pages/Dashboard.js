@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './styles/Dashboard.module.css'; // Import the CSS file
 import logo from '../assets/anandaLogo.png'; // Import the image file
-import studentRecords from '../assets/studentRecords.png'; // Import the image file
-import teacherRecords from '../assets/teacherRecords.png'; // Import the image file
-import employeeRecords from '../assets/employeeRecords.png'; // Import the image file
+import studentRecords from '../assets/studentRecords.jpg'; // Import the image file
+import teacherRecords from '../assets/teacherRecords.jpg'; // Import the image file
+import employeeRecords from '../assets/employeeRecords.jpg'; // Import the image file
 import Footer from '../component/Footer'; // Import the Footer component
 
 const Dashboard = () => {
