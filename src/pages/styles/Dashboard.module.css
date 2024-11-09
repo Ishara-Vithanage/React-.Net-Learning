@@ -21,6 +21,11 @@
     color: white;
     font-size: 4rem;
     font-weight: bold;
+    background: linear-gradient(180deg, rgb(134, 1, 1) 50%, rgb(226, 233, 7) 100%);
+    -webkit-text-stroke: 1px rgb(226, 0, 0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
 
 .school_logo {
