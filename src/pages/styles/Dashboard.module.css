@@ -1,0 +1,70 @@
+/* Main container for the dashboard */
+.dashboard {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top 25% Background Section */
+.header {
+    height: 60%;
+    background-image: url('../../assets/headingImage.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.title {
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.school_logo {
+    height: 150px; /* Adjust size as needed */
+    width: auto;
+}
+
+/* Bottom 75% Content Section */
+.content {
+    height: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f0f0f0; /* Background color for remaining content */
+}
+
+/* Button styling for each record type */
+.button {
+    width: 400px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.button img {
+    width: 120px;
+    height: auto;
+}
+
+.button p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
