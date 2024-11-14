@@ -6,9 +6,9 @@
 }
 
 /* Top 25% Background Section */
-.header {
+.topSection {
     height: 60%;
-    background-image: url('../../assets/headingImage.jpg');
+    background-image: url('../../assets/headingImage1.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -17,15 +17,12 @@
     padding: 0 2rem;
 }
 
-.title {
-    color: white;
+.topTitle {
     font-size: 4rem;
-    font-weight: bold;
     background: linear-gradient(180deg, rgb(134, 1, 1) 50%, rgb(226, 233, 7) 100%);
     -webkit-text-stroke: 1px rgb(226, 0, 0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold;
 }
 
 .school_logo {
@@ -35,7 +32,7 @@
 
 /* Bottom 75% Content Section */
 .content {
-    height: 75%;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
