@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles/StudentRecords.module.css'; // Import the CSS for styling
 import Header from '../component/Header';
 import Footer from '../component/Footer';
+import SearchBar from '../component/SearchBar';
 
 const StudentRecords = () => {
     // Sample student data
@@ -32,7 +33,7 @@ const StudentRecords = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className={styles.scrollable_tbody}>
                         {students.map((student) => (
                             <tr key={student.id}>
                                 <td>{student.id}</td>
