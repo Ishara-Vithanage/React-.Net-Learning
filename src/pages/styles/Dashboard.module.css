@@ -7,7 +7,7 @@
 
 /* Top 25% Background Section */
 .topSection {
-    height: 60%;
+    height: 100%;
     background-image: url('../../assets/headingImage1.jpg');
     background-size: cover;
     background-position: center;

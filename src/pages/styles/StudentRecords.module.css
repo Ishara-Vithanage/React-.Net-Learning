@@ -2,12 +2,22 @@
 .student_records {
     padding: 2rem;
     position: relative;
+    background-image: url(../../assets/bgImageNight.jpg);
+    background-size: cover;
+    /* Ensures the image covers the entire area */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    background-attachment: fixed;
+    /* Keeps the background image fixed while scrolling */
+    background-position: center;
+    /* Centers the image */
+    height: 100vh;
 }
 
 /* Add Student Button in top right corner */
 .add_student_btn {
     position: absolute;
-    top: 20px;
+    top: 80px;
     right: 20px;
     padding: 10px 20px;
     background-color: #4caf50;
@@ -27,7 +37,9 @@
 .student_table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 50px;
+    margin-top: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
 }
 
 .student_table th,

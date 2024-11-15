@@ -1,4 +1,4 @@
-import React from 'react';
+import { React } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../component/Header';
 import Footer from '../component/Footer'; // Import the Footer component
@@ -12,7 +12,6 @@ import employeeRecords from '../assets/employeeRecords.jpg'; // Import the image
 const Dashboard = () => {
 
     const navigate = useNavigate();
-
     const navigateStudentsRecords = () => {
         navigate('/student-records');
     }
@@ -22,15 +21,15 @@ const Dashboard = () => {
     }
 
     return (
-        
+
         <div className={styles.dashboard}>
-            <Header/>
+            <Header pageName="Dashboard" />
             {/* Top 25% Background Section */}
             <div className={styles.topSection}>
                 <h1 className={styles.topTitle}>School Administration System</h1>
                 <img src={logo} alt="School Logo" className={styles.school_logo} />
             </div>
-            
+
             {/* Remaining 75% Content Section */}
             <div className={styles.content}>
                 <div className={styles.button} id="student-records" onClick={navigateStudentsRecords}>

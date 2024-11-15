@@ -21,7 +21,7 @@ const Header = ({ pageName }) => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.pageName}>Dashboard</div>
+      <div className={styles.pageName}>{pageName}</div>
       <div className={styles.buttonContainer}>
         <button className={styles.profileButton} onClick={toggleDropdown}>
           Profile ▼
