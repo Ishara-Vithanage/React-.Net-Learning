@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { React, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../component/Header';
 import Footer from '../component/Footer'; // Import the Footer component
@@ -10,6 +10,10 @@ import employeeRecords from '../assets/employeeRecords.jpg'; // Import the image
 
 
 const Dashboard = () => {
+
+    useEffect(() => {
+        document.title = "SAS Dashboard";
+    }, []);
 
     const navigate = useNavigate();
 

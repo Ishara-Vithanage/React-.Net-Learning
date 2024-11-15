@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, placeholder }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   // Handle input change
@@ -15,7 +15,7 @@ const SearchBar = ({ onSearch }) => {
     <div style={{ margin: "20px" }}>
       <input
         type="text"
-        placeholder="Search..."
+        placeholder= {placeholder}
         value={searchTerm}
         onChange={handleInputChange}
         style={{

@@ -1,10 +1,15 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import styles from './styles/AllRecords.module.css'; // Import the CSS for styling
 import Header from '../component/Header';
 import Footer from '../component/Footer';
 import SearchBar from '../component/SearchBar';
 
 const StudentRecords = () => {
+
+    useEffect(() => {
+        document.title = "Teacher Records";
+    }, []);
+    
     // Sample student data
     const students = [
         { id: 'S001', name: 'John Doe' },
@@ -28,12 +33,13 @@ const StudentRecords = () => {
                 <table className={styles.student_table}>
                     <thead>
                         <tr>
-                            <th>Student ID</th>
+                            <th>Teacher ID</th>
                             <th>Full Name</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody className={styles.scrollable_tbody}>
+                        <SearchBar placeholder="Enter Teacher ID..." />
                         {students.map((student) => (
                             <tr key={student.id}>
                                 <td>{student.id}</td>
