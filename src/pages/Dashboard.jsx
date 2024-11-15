@@ -12,12 +12,15 @@ import employeeRecords from '../assets/employeeRecords.jpg'; // Import the image
 const Dashboard = () => {
 
     const navigate = useNavigate();
+
     const navigateStudentsRecords = () => {
         navigate('/student-records');
     }
-
-    const displayAlert = () => {
-        alert("Will update soon")
+    const navigateTeacherRecords = () => {
+        navigate('/teacher-records');
+    }
+    const navigateEmployeeRecords = () => {
+        navigate('/employee-records');
     }
 
     return (
@@ -36,11 +39,11 @@ const Dashboard = () => {
                     <img src={studentRecords} alt="Student Records" />
                     <p>Student Records</p>
                 </div>
-                <div className={styles.button} id="teacher-records" onClick={displayAlert}>
+                <div className={styles.button} id="teacher-records" onClick={navigateTeacherRecords}>
                     <img src={teacherRecords} alt="Teacher Records" />
                     <p>Teacher Records</p>
                 </div>
-                <div className={styles.button} id="employee-records" onClick={displayAlert}>
+                <div className={styles.button} id="employee-records" onClick={navigateEmployeeRecords}>
                     <img src={employeeRecords} alt="Employee Records" />
                     <p>Employee Records</p>
                 </div>

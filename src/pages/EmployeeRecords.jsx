@@ -19,7 +19,7 @@ const StudentRecords = () => {
 
     return (
         <div>
-            <Header pageName="Student Records" />
+            <Header pageName="Employee Records" />
             <div className={styles.student_records}>
                 {/* Add Student Button */}
                 <button className={styles.add_student_btn}>Add Student</button>
