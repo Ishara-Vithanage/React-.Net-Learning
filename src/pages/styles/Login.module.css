@@ -1,0 +1,77 @@
+/* Style for the gradient background */
+.loginPage {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #7d0202, #d1c300);
+  }
+  
+  /* Centered white box */
+  .loginBox {
+    width: 400px;
+    height: 325px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  /* Header section */
+  .loginHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .loginHeader h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .headingLeft {
+    margin-top: 0;
+    font-size: 12px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  /* Input fields */
+  .inputField {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Login button */
+  .loginButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    background: #2575fc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .loginButton:hover {
+    background: #1a5dbb;
+  }
+
+  .bottomText {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
