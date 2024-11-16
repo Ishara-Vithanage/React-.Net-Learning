@@ -8,7 +8,7 @@
 /* Top 25% Background Section */
 .topSection {
     height: 100%;
-    background-image: url('../../assets/headingImage1.jpg');
+    background-image: url('../../assets/headingImage.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
