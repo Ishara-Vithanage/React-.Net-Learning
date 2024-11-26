@@ -21,3 +21,26 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# api files
+/SchoolAPI/SchoolAPI/obj/Debug
+
+# Ignore Visual Studio files
+.vs/
+*.suo
+*.user
+*.cache
+*.pdb
+*.aps
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore application settings
+appsettings*.json
+
+# Ignore logs
+*.log
+
+

@@ -1,6 +1,0 @@
-@sasAPI_HostAddress = http://localhost:5084
-
-GET {{sasAPI_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
