@@ -10,5 +10,6 @@ namespace SchoolAPI.Data
         }
 
         public DbSet<StudentInfo> StudentInfo { get; set; }
+        public DbSet<TeacherInfo> TeacherInfo { get; set; }
     }
 }

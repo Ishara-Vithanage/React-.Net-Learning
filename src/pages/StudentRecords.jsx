@@ -1,26 +1,30 @@
-import { React, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles/AllRecords.module.css'; // Import the CSS for styling
 import Header from '../component/Header';
 import Footer from '../component/Footer';
 import SearchBar from '../component/SearchBar';
+import getStudent from '../services/getStudentInfo'; // Import the service
 
 const StudentRecords = () => {
+    const [students, setStudents] = useState([]); // State to hold student data
+    const [error, setError] = useState(null); // State to handle any errors
 
     useEffect(() => {
         document.title = "Student Records";
-    }, []);
 
-    // Sample student data
-    const students = [
-        { id: 'S001', name: 'John Doe' },
-        { id: 'S002', name: 'Jane Smith' },
-        { id: 'S003', name: 'Mark Johnson' },
-        { id: 'S003', name: 'Mark Johnson' },
-        { id: 'S003', name: 'Mark Johnson' },
-        { id: 'S003', name: 'Mark Johnson' },
-        { id: 'S003', name: 'Mark Johnson' },
-        { id: 'S003', name: 'Mark Johnson' }
-    ];
+        // Fetch student data
+        const fetchStudents = async () => {
+            try {
+                const { users } = await getStudent(); // Call the service
+                setStudents(users); // Update the students state
+            } catch (err) {
+                console.error("Failed to fetch student data:", err);
+                setError("Failed to fetch student data.");
+            }
+        };
+
+        fetchStudents();
+    }, []);
 
     return (
         <div>
@@ -40,15 +44,31 @@ const StudentRecords = () => {
                     </thead>
                     <tbody className={styles.scrollable_tbody}>
                         <SearchBar placeholder="Enter Student ID..." />
-                        {students.map((student) => (
-                            <tr key={student.id}>
-                                <td>{student.id}</td>
-                                <td>{student.name}</td>
-                                <td>
-                                    <button className={styles.view_more_btn}>View More</button>
+                        {error ? (
+                            <tr>
+                                <td colSpan="3" className={styles.error_message}>
+                                    {error}
                                 </td>
                             </tr>
-                        ))}
+                        ) : students.length > 0 ? (
+                            students.map((student) => (
+                                <tr key={student.id}>
+                                    <td>{student.student_id}</td>
+                                    <td>{student.full_name}</td>
+                                    <td>
+                                        <button className={styles.view_more_btn}>
+                                            View More
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan="3" className={styles.no_data_message}>
+                                    No student records available.
+                                </td>
+                            </tr>
+                        )}
                     </tbody>
                 </table>
             </div>

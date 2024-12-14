@@ -12,47 +12,47 @@ namespace SchoolAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StudentController : ControllerBase
+    public class TeacherController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public StudentController(ApplicationDbContext context)
+        public TeacherController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Student
+        // GET: api/Teacher
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<StudentInfo>>> GetStudentInfos()
+        public async Task<ActionResult<IEnumerable<TeacherInfo>>> GetTeacherInfo()
         {
-            return await _context.StudentInfo.ToListAsync();
+            return await _context.TeacherInfo.ToListAsync();
         }
 
-        // GET: api/Student/5
+        // GET: api/Teacher/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<StudentInfo>> GetStudentInfo(int id)
+        public async Task<ActionResult<TeacherInfo>> GetTeacherInfo(int id)
         {
-            var studentInfo = await _context.StudentInfo.FindAsync(id);
+            var teacherInfo = await _context.TeacherInfo.FindAsync(id);
 
-            if (studentInfo == null)
+            if (teacherInfo == null)
             {
                 return NotFound();
             }
 
-            return studentInfo;
+            return teacherInfo;
         }
 
-        // PUT: api/Student/5
+        // PUT: api/Teacher/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutStudentInfo(int id, StudentInfo studentInfo)
+        public async Task<IActionResult> PutTeacherInfo(int id, TeacherInfo teacherInfo)
         {
-            if (id != studentInfo.student_id)
+            if (id != teacherInfo.teacher_id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(studentInfo).State = EntityState.Modified;
+            _context.Entry(teacherInfo).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace SchoolAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!StudentInfoExists(id))
+                if (!TeacherInfoExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace SchoolAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Student
+        // POST: api/Teacher
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<StudentInfo>> PostStudentInfo(StudentInfo studentInfo)
+        public async Task<ActionResult<TeacherInfo>> PostTeacherInfo(TeacherInfo teacherInfo)
         {
-            _context.StudentInfo.Add(studentInfo);
+            _context.TeacherInfo.Add(teacherInfo);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetStudentInfo", new { id = studentInfo.full_name }, studentInfo);
+            return CreatedAtAction("GetTeacherInfo", new { id = teacherInfo.full_name }, teacherInfo);
         }
 
-        // DELETE: api/Student/5
+        // DELETE: api/Teacher/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteStudentInfo(int id)
+        public async Task<IActionResult> DeleteTeacherInfo(int id)
         {
-            var studentInfo = await _context.StudentInfo.FindAsync(id);
-            if (studentInfo == null)
+            var teacherInfo = await _context.TeacherInfo.FindAsync(id);
+            if (teacherInfo == null)
             {
                 return NotFound();
             }
 
-            _context.StudentInfo.Remove(studentInfo);
+            _context.TeacherInfo.Remove(teacherInfo);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool StudentInfoExists(int id)
+        private bool TeacherInfoExists(int id)
         {
-            return _context.StudentInfo.Any(e => e.student_id == id);
+            return _context.TeacherInfo.Any(e => e.teacher_id == id);
         }
     }
 }
