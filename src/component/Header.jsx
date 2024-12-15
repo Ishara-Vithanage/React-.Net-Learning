@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import styles from './styles/Header.module.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { useNavigate } from 'react-router-dom';
 
 const Header = ({ pageName }) => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
+
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
@@ -16,6 +19,7 @@ const Header = ({ pageName }) => {
 
   const handleLogout = () => {
     // Logic for logging out
+    navigate("/")
     setDropdownVisible(false); // Hide dropdown after clicking
   };
 

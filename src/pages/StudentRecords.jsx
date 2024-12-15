@@ -4,10 +4,15 @@ import Header from '../component/Header';
 import Footer from '../component/Footer';
 import SearchBar from '../component/SearchBar';
 import getStudent from '../services/getStudentInfo'; // Import the service
+import AddStudentPopup from '../component/AddStudentPopup';
 
 const StudentRecords = () => {
     const [students, setStudents] = useState([]); // State to hold student data
     const [error, setError] = useState(null); // State to handle any errors
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+    const handleOpenPopup = () => setIsPopupOpen(true);
+    const handleClosePopup = () => setIsPopupOpen(false);
 
     useEffect(() => {
         document.title = "Student Records";
@@ -15,8 +20,8 @@ const StudentRecords = () => {
         // Fetch student data
         const fetchStudents = async () => {
             try {
-                const { users } = await getStudent(); // Call the service
-                setStudents(users); // Update the students state
+                const { studentData } = await getStudent(); // Call the service
+                setStudents(studentData); // Update the students state
             } catch (err) {
                 console.error("Failed to fetch student data:", err);
                 setError("Failed to fetch student data.");
@@ -31,7 +36,10 @@ const StudentRecords = () => {
             <Header pageName="Student Records" />
             <div className={styles.student_records}>
                 {/* Add Student Button */}
-                <button className={styles.add_student_btn}>Add Student</button>
+                <button className={styles.add_student_btn} onClick={handleOpenPopup}>
+                + New Record
+                </button>
+                {isPopupOpen && <AddStudentPopup onClose={handleClosePopup} />}
 
                 {/* Table for student records */}
                 <table className={styles.student_table}>

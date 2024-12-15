@@ -27,7 +27,7 @@ const StudentRecords = () => {
             <Header pageName="Employee Records" />
             <div className={styles.student_records}>
                 {/* Add Student Button */}
-                <button className={styles.add_student_btn}>Add Student</button>
+                <button className={styles.add_student_btn}>+ New Record</button>
 
                 {/* Table for student records */}
                 <table className={styles.student_table}>
