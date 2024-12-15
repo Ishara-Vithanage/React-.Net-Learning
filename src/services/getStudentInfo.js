@@ -5,10 +5,9 @@ const url = 'https://localhost:7172/api/Student';
 const getStudent = async () => {
   try {
     const response = await axios.get(url);
-    const users = response.data; 
+    const studentData = response.data; 
 
-    // Return both the departments and the count
-    return { users };
+    return { studentData };
   } catch (error) {
     console.error('Error fetching data:', error);
     throw error;
