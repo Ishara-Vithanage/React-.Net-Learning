@@ -19,9 +19,10 @@ const SearchBar = ({ onSearch, placeholder }) => {
         value={searchTerm}
         onChange={handleInputChange}
         style={{
-          padding: "10px",
-          width: "100%",
-          maxWidth: "400px",
+          fontSize: "12px",
+          padding: "5px",
+          width: "20%",
+          maxWidth: "300px",
           border: "1px solid #ccc",
           borderRadius: "4px",
           marginBottom: "0",

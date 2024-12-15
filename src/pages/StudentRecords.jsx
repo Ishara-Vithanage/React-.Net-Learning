@@ -37,7 +37,7 @@ const StudentRecords = () => {
             <div className={styles.student_records}>
                 {/* Add Student Button */}
                 <button className={styles.add_student_btn} onClick={handleOpenPopup}>
-                    Add Student
+                + New Record
                 </button>
                 {isPopupOpen && <AddStudentPopup onClose={handleClosePopup} />}
 
