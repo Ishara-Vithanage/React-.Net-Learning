@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import anandaLogo from "../assets/anandaLogo.png";
 import styles from "./styles/Login.module.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginPage = () => {
     useEffect(() => {
@@ -15,8 +17,6 @@ const LoginPage = () => {
         password: "",
     });
 
-    const [errorMessage, setErrorMessage] = useState("");
-
     const handleChange = (e) => {
         const { id, value } = e.target;
         setCredentials({ ...credentials, [id]: value });
@@ -28,14 +28,18 @@ const LoginPage = () => {
         const { userid, password } = credentials;
 
         if (userid === "admin" && password === "admin") {
-            navigate("/dashboard"); // Redirect to the dashboard or any other page
+            toast.success("Login successful!")
+            setTimeout(() => {
+            navigate("/dashboard");}, 2000); // Redirect to the dashboard or any other page
         } else {
-            setErrorMessage("Login failed! Invalid User ID or Password.");
+            toast.error("Invalid credentials. Please try again.")
         }
     };
 
     return (
         <div className={styles.loginPage}>
+            {/* Toast Container */}
+            <ToastContainer />
             <div className={styles.loginBox}>
                 <div className={styles.loginHeader}>
                     <div className={styles.headingLeft}>
@@ -71,9 +75,6 @@ const LoginPage = () => {
                         Login
                     </button>
                 </form>
-                {errorMessage && (
-                    <p className={styles.errorMessage}>{errorMessage}</p>
-                )}
                 <p className={styles.bottomText}>&copy; 2024 School Administration System. All rights reserved.</p>
             </div>
         </div>

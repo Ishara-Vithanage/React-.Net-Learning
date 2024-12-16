@@ -113,3 +113,10 @@
 .view_more_btn:hover {
     background-color: #187bcd;
 }
+
+.spinner_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Adjust height as needed */
+  }
