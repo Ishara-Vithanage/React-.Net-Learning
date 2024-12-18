@@ -12,11 +12,12 @@
 }
 
 .popup {
+  margin-top: 5%;
   background-color: rgba(255, 255, 255, 0.9); /* Slight opacity for glass effect */
-  border-radius: 15px;
   padding: 20px;
   width: 80%;
   max-width: 900px; /* Adjust for landscape layout */
+  max-height: 500px;
   overflow-y: auto; /* Scroll if content overflows */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }

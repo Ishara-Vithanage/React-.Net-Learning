@@ -28,7 +28,7 @@ const AddStudentPopup = ({ onClose }) => {
       <div className={styles.popup}>
         <h2 className={styles.title}>Add Student</h2>
         <form onSubmit={handleSubmit} className={styles.form}>
-          <div className={styles.formRow}>
+        <div className={styles.formRow}>
             <label className={styles.label}>
               Full Name:
               <input
@@ -40,7 +40,9 @@ const AddStudentPopup = ({ onClose }) => {
                 required
               />
             </label>
-            <label className={styles.label}>
+          </div>
+          <div className={styles.formRow}>
+          <label className={styles.label}>
               Date of Birth:
               <input
                 className={styles.input}
@@ -51,32 +53,6 @@ const AddStudentPopup = ({ onClose }) => {
                 required
               />
             </label>
-          </div>
-          <div className={styles.formRow}>
-            <label className={styles.label}>
-              Address:
-              <input
-                className={styles.input}
-                type="text"
-                name="address"
-                value={formData.address}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <label className={styles.label}>
-              Parent's Details:
-              <input
-                className={styles.input}
-                type="text"
-                name="parentDetails"
-                value={formData.parentDetails}
-                onChange={handleChange}
-                required
-              />
-            </label>
-          </div>
-          <div className={styles.formRow}>
             <label className={styles.label}>
               Nationality:
               <input
@@ -88,13 +64,63 @@ const AddStudentPopup = ({ onClose }) => {
                 required
               />
             </label>
+          </div>
+          <div className={styles.formRow}>
             <label className={styles.label}>
-              Religion:
+                Address:
+                <input
+                  className={styles.input}
+                  type="text"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+          </div>
+          <div className={styles.formRow}>          
+            <label className={styles.label}>
+              Father's name:
               <input
                 className={styles.input}
                 type="text"
-                name="religion"
-                value={formData.religion}
+                name="fatherName"
+                value={formData.fatherName}
+                onChange={handleChange}
+                required
+              />
+            </label>
+            <label className={styles.label}>
+              Contact Number:
+              <input
+                className={styles.input}
+                type="text"
+                name="fatherContact"
+                value={formData.fatherContact}
+                onChange={handleChange}
+                required
+              />
+            </label>
+          </div>
+          <div className={styles.formRow}>          
+            <label className={styles.label}>
+              Mother's name:
+              <input
+                className={styles.input}
+                type="text"
+                name="motherName"
+                value={formData.motherName}
+                onChange={handleChange}
+                required
+              />
+            </label>
+            <label className={styles.label}>
+              Contact Number:
+              <input
+                className={styles.input}
+                type="text"
+                name="motherContact"
+                value={formData.motherContact}
                 onChange={handleChange}
                 required
               />
@@ -102,12 +128,23 @@ const AddStudentPopup = ({ onClose }) => {
           </div>
           <div className={styles.formRow}>
             <label className={styles.label}>
-              Contact Details:
+              Enrolled Date:
+              <input
+                className={styles.input}
+                type="date"
+                name="enrolledDate"
+                value={formData.enrolledDate}
+                onChange={handleChange}
+                required
+              />
+            </label>
+            <label className={styles.label}>
+              Enrolled Grade:
               <input
                 className={styles.input}
                 type="text"
-                name="contactDetails"
-                value={formData.contactDetails}
+                name="enrolledGrade"
+                value={formData.enrolledGrade}
                 onChange={handleChange}
                 required
               />
