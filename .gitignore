@@ -37,9 +37,6 @@ yarn-error.log*
 bin/
 obj/
 
-# Ignore application settings
-appsettings*.json
-
 # Ignore logs
 *.log
 
